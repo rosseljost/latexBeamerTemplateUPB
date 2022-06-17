@@ -1,0 +1,100 @@
+%\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{table}{xcolor} %for colored table rows
+
+\documentclass[
+    % handout
+]{beamer}
+
+\usetheme[
+    blue,
+    oneslideonhandout,
+]{upb2018}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\let\oldfootnot\footnote%
+\renewcommand{\footnote}[1]{\oldfootnot{\hspace*{.5em}#1}}
+
+% \fontseries{lc}\selectfont
+\renewcommand{\texttt}[1]{{\fontseries{lc}\selectfont\ttfamily\large #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% general settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Title}
+\subtitle{Sub-Title}
+\institute{Research Group XYZ}
+\author{Your Name}
+\date{Paderborn, \today}
+
+% choose the cropped background image on the titlepage
+\renewcommand{\titleimage}{figures/hniBackground_medium.jpg}
+\renewcommand{\headerlogo}{figures/upbLogoEN.png}
+
+\graphicspath{{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% start document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% titlepage
+\begin{frame}[plain]
+    \titlepage%
+\end{frame}
+
+\begin{preface}
+
+\begin{frame}{Motivation}
+    motivation to your topic
+\end{frame}
+
+\begin{frame}{Question to Answer}
+    what questions do you want to answer with this presentation?
+\end{frame}
+
+\begin{frame}{Overview}
+    \tableofcontents
+\end{frame}
+
+\end{preface}
+
+\setcounter{framenumber}{0}
+
+\section{Background/Preliminaries}\sectionframe%
+
+\section{Main Body of Content}\sectionframe%
+
+\begin{frame}{Awesom Topic}
+    present you content
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item answer questions from the beginning
+    \end{itemize}
+    \vspace*{1em}
+    Takeaway:
+    \begin{itemize}
+        \item main takeaways
+    \end{itemize}
+\end{frame}
+
+\section*{Appendix}\sectionframe%
+
+\begin{frame}{\secname}
+    stuff you might want to talk about/need to answer questions
+    i.e. detailed graphs that didn't make the normal presentation
+\end{frame}
+
+\begin{frame}{Attributions}
+\begin{itemize}
+    \item 
+\end{itemize}
+\end{frame}
+
+\end{document}
