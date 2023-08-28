@@ -134,7 +134,7 @@
 }
 
 \ifskiptitlepage%
-    \setbeamertemplate{background canvas}{\slidebackground}
+    \setbeamertemplate{background canvas}{\slidebackground}%
 \else%
     \setbeamertemplate{background canvas}{%
         \ifnumcomp{\thepage}{=}{1}{% this is only relevant for the first page
@@ -142,7 +142,7 @@
         }{%
             \slidebackground%
         }%
-    }
+    }%
 \fi%
 \makeatother
 
@@ -156,7 +156,7 @@
 \setbeamerfont{date}{size=\footnotesize,series=\normalfont}
 
 \setbeamertemplate{title page}{
-    \vspace*{2cm}
+    \vspace*{2.5cm}
     \begin{adjustwidth}{1.05cm}{3cm}
         {%
             \usebeamerfont{title}\usebeamercolor[fg]{title}%
@@ -182,7 +182,7 @@
 
 \ifskiptitlepage\else%
     % automatically insert title page as first page
-    \AtBeginDocument{{\setbeamertemplate{footline}{}\begin{frame}\titlepage\end{frame}}}
+    \AtBeginDocument{{\setbeamertemplate{footline}{}\begin{frame}[plain]\titlepage\end{frame}}}
 \fi%
 
 % ITEMIZE PROPERTIES
