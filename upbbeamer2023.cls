@@ -160,22 +160,22 @@
     \begin{adjustwidth}{1.05cm}{3cm}
         {%
             \usebeamerfont{title}\usebeamercolor[fg]{title}%
-            \inserttitle\\[1em]
+            \inserttitle\\[1em]%
         }%
         {%
-            \ifdefstring{\insertsubtitle}{}{}{%
+            \ifdefvoid{\insertsubtitle}{}{%
                 \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}%
                 \insertsubtitle\\
             }%
         }%
         {%
-            \ifdefstring{\insertinstitute}{}{\vfill}{%
+            \ifdefvoid{\insertinstitute}{\vfill}{%
                 \usebeamerfont{institute}\usebeamercolor[fg]{institute}%
-                \insertinstitute\vfill
+                \insertinstitute\\\vfill
             }%
         }%
 
-        {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\\}
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\\}%
         {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\\}
     \end{adjustwidth}
 }
