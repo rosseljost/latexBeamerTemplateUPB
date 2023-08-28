@@ -1,77 +1,50 @@
-%\PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{table}{xcolor} %for colored table rows
-
 \documentclass[
-    % handout
-]{beamer}
+    % uselogo,
+    % skiptitlepage,
+    % busypreface,
+]{upbbeamer2023}
 
-\usetheme[
-    blue,
-    oneslideonhandout,
-]{upb2018}
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-
-\let\oldfootnot\footnote%
-\renewcommand{\footnote}[1]{\oldfootnot{\hspace*{.5em}#1}}
-
-% \fontseries{lc}\selectfont
-\renewcommand{\texttt}[1]{{\fontseries{lc}\selectfont\ttfamily\large #1}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% general settings
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Title}
-\subtitle{Sub-Title}
+\title{Title of the presentation,\\two lines max.}
+\subtitle{Subtitle and further information on the presentation, four lines max. Note: Please do not make any changes to the slide master. Avoid changing the size and position of text boxes on all slides.}
 \institute{Research Group XYZ}
-\author{Your Name}
+\author{Academic title first name surname speaker}
 \date{Paderborn, \today}
 
-% choose the cropped background image on the titlepage
-\renewcommand{\titleimage}{figures/hniBackground_medium.jpg}
-\renewcommand{\headerlogo}{figures/upbLogoEN.png}
-
-\graphicspath{{figures/}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% start document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% titlepage
-\begin{frame}[plain]
-    \titlepage%
-\end{frame}
-
-\begin{preface}
-
-\begin{frame}{Motivation}
+\begin{frame}[preface]{Motivation}
     motivation to your topic
 \end{frame}
 
-\begin{frame}{Question to Answer}
+\begin{frame}[preface]{Question to Answer}
     what questions do you want to answer with this presentation?
 \end{frame}
 
-\begin{frame}{Overview}
+\begin{frame}[preface]{Overview}
     \tableofcontents
 \end{frame}
 
-\end{preface}
+\Section{Background/Preliminaries}
 
-\setcounter{framenumber}{0}
-
-\section{Background/Preliminaries}\sectionframe%
-
-\section{Main Body of Content}\sectionframe%
-
-\begin{frame}{Awesom Topic}
-    present you content
+\begin{frame}{Important Definitions}
+    introduce the information you need for your main part
 \end{frame}
 
-\section{Conclusion}
+\Section{Main Body of Content}
+
+\begin{frame}{Your Awesome Topic}
+    your content
+\end{frame}
+
+% the title is not typeset at all when there is none,
+% so the theme can't insert space when there is no title...
+\begin{frame}{\phantom{X}}
+    \textfit{THIS IS A BOLD}
+
+    \textfit{STATEMENT}
+\end{frame}
+
+\Section{Conclusion}
 
 \begin{frame}{\secname}
     \begin{itemize}
@@ -84,7 +57,7 @@
     \end{itemize}
 \end{frame}
 
-\section*{Appendix}\sectionframe%
+\section*{Appendix}\sectionframe
 
 \begin{frame}{\secname}
     stuff you might want to talk about/need to answer questions
