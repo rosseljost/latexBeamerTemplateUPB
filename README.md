@@ -19,7 +19,12 @@ Not only is this typeface optimized for distinguishability between characters, b
 I think that everyone can get use out of a font that is easily legible in non-perfect condition, even someone with perfect sight.
 I am still disappointed that the university chose a typeface that is so inaccessible.
 
+The Corporate Design Font of the UPB (Karla):
+
 ![Karla](readme-pictures/karla-font-sample.png)
+
+Atkinson Hyperlegible:
+
 ![Atkinson Hyperlegible](readme-pictures/adkinson-font-sample.png)
 
 ### Title Slide
@@ -49,7 +54,9 @@ Optionally, there is a variant with the logo (`uselogo` class option):
 ### Section Slide
 
 I added this slide-type, as I like to announce sections with their own “title”.
-It is provided by a command that uses the current section title (set with `\section`), the example is produced with:
+Create a section slide with `\Section` (notice the capital S).
+
+Internally `\sectionframe` creates the slide using the current section title (set with `\section`).
 
 ```tex
 \Section{Background/Preliminaries}
