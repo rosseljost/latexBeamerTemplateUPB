@@ -188,8 +188,7 @@
 \fi%
 
 % ITEMIZE PROPERTIES
-\defbeamertemplate{itemize item}{small circle}{\textbullet}
-\setbeamertemplate{itemize items}[small circle]
+\setbeamertemplate{itemize items}{\textbullet}
 
 % DEFINING TOC
 \setcounter{tocdepth}{2}
