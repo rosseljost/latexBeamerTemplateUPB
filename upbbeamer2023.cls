@@ -12,6 +12,8 @@
 \DeclareOptionBeamer{skiptitlepage}[true]{\skiptitlepagetrue}
 \newif\ifbusypreface\busyprefacefalse%
 \DeclareOptionBeamer{busypreface}[true]{\busyprefacetrue}
+\newif\ifnumbersections\numbersectionsfalse%
+\DeclareOptionBeamer{numbersections}[true]{\numbersectionstrue}
 \ProcessOptionsBeamer
 
 \RequirePackage[T1]{fontenc}
@@ -190,8 +192,17 @@
 \setbeamertemplate{itemize items}[small circle]
 
 % DEFINING TOC
-\setbeamertemplate{section in toc}{\textbullet\hspace{\itemsep}\inserttocsection}
-\setbeamertemplate{subsection in toc}{\hspace{1em}\textbullet\hspace{\itemsep}\inserttocsubsection}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\defbeamertemplate{section in toc}{circle unnumbered}{\leavevmode\textbullet\hspace{\itemsep}\inserttocsection\par}
+\defbeamertemplate{subsection in toc}{circle unnumbered}{\leavevmode\hspace{1em}\textbullet\hspace{\itemsep}\inserttocsubsection\par}
+\ifnumbersections%
+    \setbeamertemplate{section in toc}[sections numbered]
+    \setbeamertemplate{subsection in toc}{\leavevmode\hspace{1em}\inserttocsectionnumber.\inserttocsubsectionnumber~\inserttocsubsection\par}
+    \setbeamertemplate{subsubsection in toc}{\leavevmode\hspace{3em}\inserttocsectionnumber.\inserttocsubsectionnumber.\inserttocsubsubsectionnumber~\inserttocsubsubsection\par}
+\else%
+    \setbeamertemplate{sections/subsections in toc}[circle unnumbered]
+\fi%
 
 % FOOTNOTES
 \RequirePackage[hang]{footmisc}
@@ -225,7 +236,7 @@
     \setbeamertemplate{background canvas}{\slidebackgroundbusy}
     \begin{frame}[c]
         \begin{adjustwidth}{1.05cm}{3cm}
-            \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsection
+            \usebeamerfont{title}\usebeamercolor[fg]{title}\ifnumbersections\thesection. \fi\insertsection
         \end{adjustwidth}
     \end{frame}
     }
